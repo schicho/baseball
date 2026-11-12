@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="64" height="64">
+  <!-- Animated Motion Swish Arcs -->
+  <g opacity="0">
+    <path d="M10 4 A 18 18 0 0 1 28 19" fill="none" stroke="#90A4AE" stroke-width="1.5" stroke-linecap="round" />
+    <path d="M6 7 A 22 22 0 0 1 25 24" fill="none" stroke="#B0BEC5" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="6 3" />
+    <animate attributeName="opacity" values="0; 0.8; 0; 0" keyTimes="0; 0.25; 0.5; 1" dur="0.7s" repeatCount="indefinite" />
+  </g>
+
+  <!-- Swinging Bat Group -->
+  <g>
+    <animateTransform attributeName="transform" type="rotate" values="-55 22 23; 10 22 23; -55 22 23" keyTimes="0; 0.35; 1" calcMode="spline" keySplines="0.2 0.8 0.2 1; 0.4 0 0.2 1" dur="0.7s" repeatCount="indefinite" />
+
+    <!-- Bat Wood Body -->
+    <path d="M20.5 23 L19.5 4 C19.5 1.8 24.5 1.8 24.5 4 L23.5 23 Z" fill="#C68642" stroke="#3E2723" stroke-width="1.2" stroke-linejoin="round" />
+    <!-- Wood Highlight -->
+    <path d="M21.2 21 L20.8 4.5 C20.8 3.2 22.2 3.2 22.2 4.5 L22 21 Z" fill="#E0AC69" opacity="0.6" />
+    <!-- Grip Tape -->
+    <rect x="20.3" y="17" width="3.4" height="6" fill="#212121" stroke="#3E2723" stroke-width="0.8" />
+    <path d="M20.3 18.5 L23.7 19.5 M20.3 20.5 L23.7 21.5" stroke="#616161" stroke-width="0.8" />
+    <!-- Knob -->
+    <rect x="19.5" y="23" width="5" height="2.2" rx="1.1" fill="#8D5524" stroke="#3E2723" stroke-width="1.2" />
+  </g>
+</svg>

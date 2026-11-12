@@ -1,0 +1,11 @@
+body {
+    cursor: url('bat.svg') 8 8, auto;
+}
+
+a,
+button,
+[role="button"],
+input[type="submit"],
+select {
+    cursor: url('swinging-bat-static.svg') 30 6, pointer;
+}
