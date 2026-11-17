@@ -1,11 +1,81 @@
-body {
-    cursor: url('bat.svg') 8 8, auto;
+* {
+    box-sizing: border-box;
 }
 
-a,
-button,
-[role="button"],
-input[type="submit"],
-select {
-    cursor: url('swinging-bat-static.svg') 30 6, pointer;
+html,
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: #cfcfcf;
+    overflow: hidden;
+}
+
+#container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+}
+
+#container svg {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    background: #eeeeee;
+}
+
+.poster-background {
+    fill: #eeeeee;
+}
+
+.state {
+    fill: none;
+    fill-opacity: 0.25;
+    stroke: none;
+}
+
+.state-borders {
+    fill: none;
+    stroke: #242424;
+    stroke-linejoin: round;
+    stroke-width: 0.8px;
+}
+
+.nation-border {
+    fill: none;
+    stroke: #242424;
+    stroke-linejoin: round;
+    stroke-width: 1.5px;
+}
+
+
+@media print {
+    body {
+        overflow: visible;
+    }
+
+    @page {
+        size: A0 portrait;
+        margin: 0;
+    }
+
+    #container {
+        padding: 0;
+        height: auto;
+    }
+
+    #container svg {
+        width: 841mm;
+        height: 1189mm;
+        max-width: none;
+        max-height: none;
+    }
 }
