@@ -13,11 +13,20 @@ async function drawTeamDots(mapGroup, projection) {
 
     const homeCities = await response.json();
 
-    mapGroup.append("g")
-        .attr("class", "team-dots")
-        .selectAll("circle")
+    const dotg = mapGroup.append("g")
+        .attr("class", "team-dots");
+
+    const dots = dotg.selectAll("g")
         .data(homeCities.features)
-        .join("circle")
+        .join("g")
+        .on("mouseover", function (event, team) {
+            d3.select(this).select("text").attr("visibility", "visible");
+        })
+        .on("mouseout", function (event, team) {
+            d3.select(this).select("text").attr("visibility", "hidden");
+        });
+
+    dots.append("circle")
         .attr("class", "team-dot")
         .attr("cx", (team) => {
             const position = projection(team.geometry.coordinates);
@@ -29,9 +38,23 @@ async function drawTeamDots(mapGroup, projection) {
         })
         .attr("r", 5)
         .attr("fill", (team) => team.properties.color)
-        .attr("stroke", "#ffffff")
-        .attr("stroke-width", 1)
-        .append("title")
+
+    dots.append("text")
+        .attr("class", "team-label")
+        .attr("x", (team) => {
+            const position = projection(team.geometry.coordinates);
+            return position ? position[0] : null;
+        })
+        .attr("y", (team) => {
+            const position = projection(team.geometry.coordinates);
+            return position ? position[1] - 20 : null;
+        })
+        .attr("text-anchor", "middle")
+        .attr("dominant-baseline", "middle")
+        .text((team) => team.properties.team)
+        .attr("visibility", "hidden");
+
+    dots.append("title")
         .text((team) => `${team.properties.team} — ${team.properties.city}`);
 }
 
@@ -47,13 +70,14 @@ export class USAMap {
     }
 
     async render(svg) {
-
         const MAP_WIDTH = this.width - this.marginLeft - this.marginRight;
         const MAP_HEIGHT = 500;
 
-        const mapGroup = svg.append("g")
+        const mapG = svg.append("g")
             .attr("class", "usa-map")
             .attr("transform", `translate(${this.marginLeft}, ${this.height - MAP_HEIGHT})`);
+
+        const lineg = mapG.append("g").attr("class", "map-lines");
 
         const response = await fetch(USA_TOPOJSON_URL);
 
@@ -69,7 +93,7 @@ export class USAMap {
 
         const path = d3.geoPath(projection);
 
-        mapGroup.selectAll("path")
+        lineg.selectAll("path")
             .data(states.features)
             .join("path")
             .attr("class", "state-borders")
@@ -77,6 +101,6 @@ export class USAMap {
             .append("title")
             .text((state) => state.properties.name);
 
-        await drawTeamDots(mapGroup, projection);
+        await drawTeamDots(mapG, projection);
     }
 }

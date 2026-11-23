@@ -2,6 +2,12 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'FreeSans';
+    src: url('FreeSans.woff2') format('woff2');
+    font-display: swap;
+}
+
 html,
 body {
     margin: 0;
@@ -10,6 +16,10 @@ body {
 }
 
 body {
+    font-family: 'FreeSans', sans-serif;
+    font-optical-sizing: auto;
+    font-size: 20px;
+    line-height: 1.6;
     background: #cfcfcf;
     overflow: hidden;
 }
@@ -47,6 +57,10 @@ body {
     stroke: #242424;
     stroke-linejoin: round;
     stroke-width: 0.8px;
+}
+
+.team-label {
+    fill: #de0909;
 }
 
 
