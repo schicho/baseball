@@ -3,157 +3,157 @@
   "features": [
     {
       "type": "Feature",
-      "properties": { "team": "Indians", "city": "Cleveland, OH" },
+      "properties": { "team": "Indians", "city": "Cleveland, OH", "color": "#E31937" },
       "geometry": { "type": "Point", "coordinates": [-81.6944, 41.4993] }
     },
     {
       "type": "Feature",
-      "properties": { "team": "Yankees", "city": "New York, NY" },
+      "properties": { "team": "Yankees", "city": "New York, NY", "color": "#003087" },
       "geometry": { "type": "Point", "coordinates": [-74.006, 40.7128] }
     },
     {
       "type": "Feature",
-      "properties": { "team": "Athletics", "city": "West Sacramento, CA" },
+      "properties": { "team": "Athletics", "city": "West Sacramento, CA", "color": "#003831" },
       "geometry": { "type": "Point", "coordinates": [-121.5266, 38.5805] }
     },
     {
       "type": "Feature",
-      "properties": { "team": "Mets", "city": "New York, NY" },
+      "properties": { "team": "Mets", "city": "New York, NY", "color": "#002D72" },
       "geometry": { "type": "Point", "coordinates": [-74.006, 40.7128] }
     },
     {
       "type": "Feature",
-      "properties": { "team": "Expos", "city": "Montreal, QC" },
+      "properties": { "team": "Expos", "city": "Montreal, QC", "color": "#003087" },
       "geometry": { "type": "Point", "coordinates": [-73.5878, 45.5088] }
     },
     {
       "type": "Feature",
-      "properties": { "team": "Twins", "city": "Minneapolis, MN" },
+      "properties": { "team": "Twins", "city": "Minneapolis, MN", "color": "#002B5C" },
       "geometry": { "type": "Point", "coordinates": [-93.265, 44.9778] }
     },
     {
       "type": "Feature",
-      "properties": { "team": "Red Sox", "city": "Boston, MA" },
+      "properties": { "team": "Red Sox", "city": "Boston, MA", "color": "#BD3039" },
       "geometry": { "type": "Point", "coordinates": [-71.0589, 42.3601] }
     },
     {
       "type": "Feature",
-      "properties": { "team": "Astros", "city": "Houston, TX" },
+      "properties": { "team": "Astros", "city": "Houston, TX", "color": "#EB6E1F" },
       "geometry": { "type": "Point", "coordinates": [-95.3698, 29.7604] }
     },
     {
       "type": "Feature",
-      "properties": { "team": "Padres", "city": "San Diego, CA" },
+      "properties": { "team": "Padres", "city": "San Diego, CA", "color": "#2F241D" },
       "geometry": { "type": "Point", "coordinates": [-117.1611, 32.7157] }
     },
     {
       "type": "Feature",
-      "properties": { "team": "Diamondbacks", "city": "Phoenix, AZ" },
+      "properties": { "team": "Diamondbacks", "city": "Phoenix, AZ", "color": "#A71930" },
       "geometry": { "type": "Point", "coordinates": [-112.074, 33.4484] }
     },
     {
       "type": "Feature",
-      "properties": { "team": "Tigers", "city": "Detroit, MI" },
+      "properties": { "team": "Tigers", "city": "Detroit, MI", "color": "#0C2340" },
       "geometry": { "type": "Point", "coordinates": [-83.0458, 42.3314] }
     },
     {
       "type": "Feature",
-      "properties": { "team": "Dodgers", "city": "Los Angeles, CA" },
+      "properties": { "team": "Dodgers", "city": "Los Angeles, CA", "color": "#005A9C" },
       "geometry": { "type": "Point", "coordinates": [-118.2437, 34.0522] }
     },
     {
       "type": "Feature",
-      "properties": { "team": "Reds", "city": "Cincinnati, OH" },
+      "properties": { "team": "Reds", "city": "Cincinnati, OH", "color": "#C6011F" },
       "geometry": { "type": "Point", "coordinates": [-84.512, 39.1031] }
     },
     {
       "type": "Feature",
-      "properties": { "team": "Rays", "city": "St. Petersburg, FL" },
+      "properties": { "team": "Rays", "city": "St. Petersburg, FL", "color": "#092C5C" },
       "geometry": { "type": "Point", "coordinates": [-82.6403, 27.7676] }
     },
     {
       "type": "Feature",
-      "properties": { "team": "Blue Jays", "city": "Toronto, ON" },
+      "properties": { "team": "Blue Jays", "city": "Toronto, ON", "color": "#134A8E" },
       "geometry": { "type": "Point", "coordinates": [-79.42, 43.7] }
     },
     {
       "type": "Feature",
-      "properties": { "team": "Cubs", "city": "Chicago, IL" },
+      "properties": { "team": "Cubs", "city": "Chicago, IL", "color": "#0E3386" },
       "geometry": { "type": "Point", "coordinates": [-87.6298, 41.8781] }
     },
     {
       "type": "Feature",
-      "properties": { "team": "Angels", "city": "Anaheim, CA" },
+      "properties": { "team": "Angels", "city": "Anaheim, CA", "color": "#BA0021" },
       "geometry": { "type": "Point", "coordinates": [-117.9145, 33.8366] }
     },
     {
       "type": "Feature",
-      "properties": { "team": "Brewers", "city": "Milwaukee, WI" },
+      "properties": { "team": "Brewers", "city": "Milwaukee, WI", "color": "#12284B" },
       "geometry": { "type": "Point", "coordinates": [-87.9065, 43.0389] }
     },
     {
       "type": "Feature",
-      "properties": { "team": "White Sox", "city": "Chicago, IL" },
+      "properties": { "team": "White Sox", "city": "Chicago, IL", "color": "#27251F" },
       "geometry": { "type": "Point", "coordinates": [-87.6298, 41.8781] }
     },
     {
       "type": "Feature",
-      "properties": { "team": "Braves", "city": "Atlanta, GA" },
+      "properties": { "team": "Braves", "city": "Atlanta, GA", "color": "#CE1141" },
       "geometry": { "type": "Point", "coordinates": [-84.388, 33.749] }
     },
     {
       "type": "Feature",
-      "properties": { "team": "Pirates", "city": "Pittsburgh, PA" },
+      "properties": { "team": "Pirates", "city": "Pittsburgh, PA", "color": "#FDB827" },
       "geometry": { "type": "Point", "coordinates": [-79.9959, 40.4406] }
     },
     {
       "type": "Feature",
-      "properties": { "team": "Rangers", "city": "Arlington, TX" },
+      "properties": { "team": "Rangers", "city": "Arlington, TX", "color": "#003278" },
       "geometry": { "type": "Point", "coordinates": [-97.1081, 32.7357] }
     },
     {
       "type": "Feature",
-      "properties": { "team": "Giants", "city": "San Francisco, CA" },
+      "properties": { "team": "Giants", "city": "San Francisco, CA", "color": "#FD5A1E" },
       "geometry": { "type": "Point", "coordinates": [-122.4194, 37.7749] }
     },
     {
       "type": "Feature",
-      "properties": { "team": "Cardinals", "city": "St. Louis, MO" },
+      "properties": { "team": "Cardinals", "city": "St. Louis, MO", "color": "#C41E3A" },
       "geometry": { "type": "Point", "coordinates": [-90.1994, 38.627] }
     },
     {
       "type": "Feature",
-      "properties": { "team": "Royals", "city": "Kansas City, MO" },
+      "properties": { "team": "Royals", "city": "Kansas City, MO", "color": "#004687" },
       "geometry": { "type": "Point", "coordinates": [-94.5786, 39.0997] }
     },
     {
       "type": "Feature",
-      "properties": { "team": "Marlins", "city": "Miami, FL" },
+      "properties": { "team": "Marlins", "city": "Miami, FL", "color": "#00A3E0" },
       "geometry": { "type": "Point", "coordinates": [-80.1918, 25.7617] }
     },
     {
       "type": "Feature",
-      "properties": { "team": "Rockies", "city": "Denver, CO" },
+      "properties": { "team": "Rockies", "city": "Denver, CO", "color": "#333366" },
       "geometry": { "type": "Point", "coordinates": [-104.9903, 39.7392] }
     },
     {
       "type": "Feature",
-      "properties": { "team": "Orioles", "city": "Baltimore, MD" },
+      "properties": { "team": "Orioles", "city": "Baltimore, MD", "color": "#DF4601" },
       "geometry": { "type": "Point", "coordinates": [-76.6122, 39.2904] }
     },
     {
       "type": "Feature",
-      "properties": { "team": "Phillies", "city": "Philadelphia, PA" },
+      "properties": { "team": "Phillies", "city": "Philadelphia, PA", "color": "#E81828" },
       "geometry": { "type": "Point", "coordinates": [-75.1652, 39.9526] }
     },
     {
       "type": "Feature",
-      "properties": { "team": "Mariners", "city": "Seattle, WA" },
+      "properties": { "team": "Mariners", "city": "Seattle, WA", "color": "#005C5C" },
       "geometry": { "type": "Point", "coordinates": [-122.3321, 47.6062] }
     },
     {
       "type": "Feature",
-      "properties": { "team": "Nationals", "city": "Washington, D.C." },
+      "properties": { "team": "Nationals", "city": "Washington, D.C.", "color": "#AB0003" },
       "geometry": { "type": "Point", "coordinates": [-77.0369, 38.9072] }
     }
   ]

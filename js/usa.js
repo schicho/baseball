@@ -2,6 +2,38 @@ import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
 import { feature, mesh } from "https://cdn.jsdelivr.net/npm/topojson-client@3/+esm";
 
 const USA_TOPOJSON_URL = "https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json";
+const HOMECITIES_URL = "./data/homecities.json";
+
+async function drawTeamDots(mapGroup, projection) {
+    const response = await fetch(HOMECITIES_URL);
+
+    if (!response.ok) {
+        throw new Error(`Could not load home cities (${response.status} ${response.statusText})`);
+    }
+
+    const homeCities = await response.json();
+
+    mapGroup.append("g")
+        .attr("class", "team-dots")
+        .selectAll("circle")
+        .data(homeCities.features)
+        .join("circle")
+        .attr("class", "team-dot")
+        .attr("cx", (team) => {
+            const position = projection(team.geometry.coordinates);
+            return position ? position[0] : null;
+        })
+        .attr("cy", (team) => {
+            const position = projection(team.geometry.coordinates);
+            return position ? position[1] : null;
+        })
+        .attr("r", 5)
+        .attr("fill", (team) => team.properties.color)
+        .attr("stroke", "#ffffff")
+        .attr("stroke-width", 1)
+        .append("title")
+        .text((team) => `${team.properties.team} — ${team.properties.city}`);
+}
 
 export class USAMap {
 
@@ -60,5 +92,7 @@ export class USAMap {
             .datum(nationBorder)
             .attr("class", "nation-border")
             .attr("d", path);
+
+        await drawTeamDots(mapGroup, projection);
     }
 }
