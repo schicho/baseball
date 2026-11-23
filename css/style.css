@@ -49,13 +49,6 @@ body {
     stroke-width: 0.8px;
 }
 
-.nation-border {
-    fill: none;
-    stroke: #242424;
-    stroke-linejoin: round;
-    stroke-width: 1.5px;
-}
-
 
 @media print {
     body {

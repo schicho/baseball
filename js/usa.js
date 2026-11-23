@@ -1,7 +1,7 @@
 import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
-import { feature, mesh } from "https://cdn.jsdelivr.net/npm/topojson-client@3/+esm";
+import { feature } from "https://cdn.jsdelivr.net/npm/topojson-client@3/+esm";
 
-const USA_TOPOJSON_URL = "https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json";
+const USA_TOPOJSON_URL = "./data/usatopo_no_alaska_hawaii.json";
 const HOMECITIES_URL = "./data/homecities.json";
 
 async function drawTeamDots(mapGroup, projection) {
@@ -63,12 +63,6 @@ export class USAMap {
 
         const topology = await response.json();
         const states = feature(topology, topology.objects.states);
-        const stateBorders = mesh(
-            topology,
-            topology.objects.states,
-            (a, b) => a !== b
-        );
-        const nationBorder = mesh(topology, topology.objects.nation);
 
         const projection = d3.geoAlbersUsa()
             .fitSize([MAP_WIDTH, MAP_HEIGHT], states);
@@ -78,20 +72,10 @@ export class USAMap {
         mapGroup.selectAll("path")
             .data(states.features)
             .join("path")
-            .attr("class", "state")
+            .attr("class", "state-borders")
             .attr("d", path)
             .append("title")
             .text((state) => state.properties.name);
-
-        mapGroup.append("path")
-            .datum(stateBorders)
-            .attr("class", "state-borders")
-            .attr("d", path);
-
-        mapGroup.append("path")
-            .datum(nationBorder)
-            .attr("class", "nation-border")
-            .attr("d", path);
 
         await drawTeamDots(mapGroup, projection);
     }
