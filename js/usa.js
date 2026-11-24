@@ -4,6 +4,16 @@ import { feature } from "https://cdn.jsdelivr.net/npm/topojson-client@3/+esm";
 const USA_TOPOJSON_URL = "./data/usatopo_no_alaska_hawaii.json";
 const HOMECITIES_URL = "./data/homecities.json";
 
+
+function chargeIntensityToColor(intensity) {
+    if (intensity < 0 || intensity > 10) {
+        throw new Error(`Invalid charge intensity: ${intensity}`);
+    }
+    const colorscale = d3.scaleSequential(interpolateYlOrRd);
+    const color = colorscale(intensity / 10);
+    return color;
+}
+
 async function drawTeamDots(mapGroup, projection) {
     const response = await fetch(HOMECITIES_URL);
 
