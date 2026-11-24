@@ -16,17 +16,17 @@ async function drawTeamDots(mapGroup, projection) {
     const dotg = mapGroup.append("g")
         .attr("class", "team-dots");
 
-    const dots = dotg.selectAll("g")
+    const dotsg = dotg.selectAll("g")
         .data(homeCities.features)
         .join("g")
         .on("mouseover", function (event, team) {
-            d3.select(this).select("text").attr("visibility", "visible");
+            d3.select(this).select(".hover-group").attr("visibility", "visible");
         })
         .on("mouseout", function (event, team) {
-            d3.select(this).select("text").attr("visibility", "hidden");
+            d3.select(this).select(".hover-group").attr("visibility", "hidden");
         });
 
-    dots.append("circle")
+    dotsg.append("circle")
         .attr("class", "team-dot")
         .attr("cx", (team) => {
             const position = projection(team.geometry.coordinates);
@@ -39,23 +39,32 @@ async function drawTeamDots(mapGroup, projection) {
         .attr("r", 5)
         .attr("fill", (team) => team.properties.color)
 
-    dots.append("text")
-        .attr("class", "team-label")
-        .attr("x", (team) => {
+    const hoverG = dotsg.append("g")
+        .attr("class", "hover-group")
+        .attr("transform", (team) => {
             const position = projection(team.geometry.coordinates);
-            return position ? position[0] : null;
+            return position ? `translate(${position[0]}, ${position[1] - 20})` : null;
         })
-        .attr("y", (team) => {
-            const position = projection(team.geometry.coordinates);
-            return position ? position[1] - 20 : null;
-        })
-        .attr("text-anchor", "middle")
-        .attr("dominant-baseline", "middle")
-        .text((team) => team.properties.team)
         .attr("visibility", "hidden");
 
-    dots.append("title")
-        .text((team) => `${team.properties.team} — ${team.properties.city}`);
+
+    hoverG.append("rect")
+        .attr("class", "hover-rect")
+        .attr("x", (team) => -team.properties.team.length * 7)
+        .attr("y", -20)
+        .attr("width", (team) => team.properties.team.length * 7 * 2)
+        .attr("height", 27)
+        .attr("rx", 5)
+        .attr("ry", 5)
+        .attr("fill", "white")
+        .attr("stroke", "black")
+        .attr("stroke-width", 1);
+
+    hoverG.append("text")
+        .attr("class", "team-label")
+        .attr("text-anchor", "middle")
+        .attr("dominant-baseline", "upper")
+        .text((team) => team.properties.team)
 }
 
 export class USAMap {
